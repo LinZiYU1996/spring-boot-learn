@@ -19,6 +19,10 @@
         <option value="$PROJECT_DIR$/spring-boot-mybatis-annotation/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-Boot-Security-JWT/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-swagger/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-jpa-thymeleaf-curd/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot-mybatis-springsecurity/pom.xml" />
       </list>
     </option>
   </component>
