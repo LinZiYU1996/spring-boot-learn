@@ -11,28 +11,32 @@
         <module name="spring-boot-jwt" />
         <module name="spring-boot-netty" />
         <module name="springboot-event" />
-        <module name="spring-boot-jpa" />
+        <module name="spring-boot-jpa-thymeleaf-curd" />
         <module name="spring-boot-mybatis-annotation" />
         <module name="springboot-schedule" />
         <module name="springboot-exception" />
         <module name="spring-boot-aop" />
         <module name="spring-boot-swagger" />
-        <module name="spring-boot-jpa-thymeleaf-curd" />
+        <module name="spring-boot-jpa" />
+        <module name="springboot-mybatis-plus" />
         <module name="spring-boot-mybatis-plus" />
         <module name="spring-boot-mysql" />
         <module name="spring-bean-lifecycle" />
+        <module name="quick-mybatis-plus" />
         <module name="SpringBoot-mybatis-springsecurity" />
         <module name="spring-boot-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Spring-Boot-Security-JWT" target="1.8" />
+      <module name="springboot-mybatis-plus" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Spring-Boot-Security-JWT" options="-parameters" />
       <module name="SpringBoot-mybatis-springsecurity" options="-parameters" />
+      <module name="quick-mybatis-plus" options="-parameters" />
       <module name="spring-bean-lifecycle" options="-parameters" />
       <module name="spring-boot-aop" options="-parameters" />
       <module name="spring-boot-jpa" options="-parameters" />
@@ -48,6 +52,7 @@
       <module name="springboot-event" options="-parameters" />
       <module name="springboot-exception" options="-parameters" />
       <module name="springboot-future" options="-parameters" />
+      <module name="springboot-mybatis-plus" options="-parameters" />
       <module name="springboot-schedule" options="-parameters" />
     </option>
   </component>
