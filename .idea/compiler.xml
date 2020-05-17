@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-future" />
         <module name="spring-learn-annotation" />
-        <module name="spring-boot-jwt" />
+        <module name="spring-boot-redis" />
         <module name="spring-boot-netty" />
         <module name="springboot-event" />
         <module name="spring-boot-jpa-thymeleaf-curd" />
@@ -24,7 +24,7 @@
         <module name="spring-bean-lifecycle" />
         <module name="quick-mybatis-plus" />
         <module name="SpringBoot-mybatis-springsecurity" />
-        <module name="spring-boot-redis" />
+        <module name="spring-boot-jwt" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

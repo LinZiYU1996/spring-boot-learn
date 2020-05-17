@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.apache.ibatis.annotations.ConstructorArgs;
 
 import java.io.Serializable;
 
@@ -17,6 +20,8 @@ import java.io.Serializable;
  */
 
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class MyUser extends Model<MyUser> {
 
     private static final long serialVersionUID=1L;
@@ -31,35 +36,11 @@ public class MyUser extends Model<MyUser> {
     private String birthday;
 
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public MyUser(String name, String pwd, String birthday) {
         this.name = name;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
         this.pwd = pwd;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
