@@ -24,6 +24,8 @@
         <option value="$PROJECT_DIR$/SpringBoot-mybatis-springsecurity/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-mybatis-plus/pom.xml" />
         <option value="$PROJECT_DIR$/quick-mybatis-plus/pom.xml" />
+        <option value="$PROJECT_DIR$/swagger/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis-Plus/pom.xml" />
       </list>
     </option>
   </component>

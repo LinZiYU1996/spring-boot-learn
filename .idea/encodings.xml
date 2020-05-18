@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Mybatis-Plus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringBoot-mybatis-springsecurity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/quick-mybatis-plus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-lifecycle/src/main/java" charset="UTF-8" />
@@ -19,5 +20,6 @@
     <file url="file://$PROJECT_DIR$/springboot-exception/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-future/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-schedule/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/swagger/src/main/java" charset="UTF-8" />
   </component>
 </project>
