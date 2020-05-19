@@ -1,4 +1,4 @@
-package com.test.generator.entity;
+package com.example.mybatisplus.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.time.LocalDateTime;
@@ -14,6 +14,8 @@ import java.io.Serializable;
  */
 public class User extends Model<User> {
 
+    public static final String CODE = "1";
+    public static final String NAME = "aa";
     private static final long serialVersionUID=1L;
 
     /**

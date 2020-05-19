@@ -1,9 +1,10 @@
-package com.test.generator.service.impl;
+package com.example.mybatisplus.service.impl;
 
-import com.test.generator.entity.User;
-import com.test.generator.mapper.UserMapper;
-import com.test.generator.service.IUserService;
+import com.example.mybatisplus.entity.User;
+import com.example.mybatisplus.mapper.UserMapper;
+import com.example.mybatisplus.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+
 
 }

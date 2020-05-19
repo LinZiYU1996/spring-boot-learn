@@ -1,6 +1,6 @@
-package com.test.generator.service;
+package com.example.mybatisplus.service;
 
-import com.test.generator.entity.User;
+import com.example.mybatisplus.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
