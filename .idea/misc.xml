@@ -28,6 +28,9 @@
         <option value="$PROJECT_DIR$/Mybatis-Plus/pom.xml" />
         <option value="$PROJECT_DIR$/Jwt/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-dataway/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-Shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/Shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/jwt-redis/pom.xml" />
       </list>
     </option>
   </component>

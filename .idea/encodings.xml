@@ -3,9 +3,12 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Jwt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Mybatis-Plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Shiro/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringBoot-mybatis-springsecurity/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jwt-redis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/quick-mybatis-plus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean-lifecycle/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-Shiro/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-aop/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-dataway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-jpa-thymeleaf-curd/src/main/java" charset="UTF-8" />

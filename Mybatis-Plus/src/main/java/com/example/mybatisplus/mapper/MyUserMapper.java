@@ -6,6 +6,7 @@ import com.example.mybatisplus.entity.MyUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -17,8 +18,15 @@ import java.util.List;
  * @author Lin
  * @since 2020-05-18
  */
+
+@Repository
 public interface MyUserMapper extends BaseMapper<MyUser> {
 
     @Select("select * from my_user")
     List<MyUser> getAll(@Param(Constants.WRAPPER) Wrapper wrapper);
+
+
+    @Select("select * from my_user where name = #{name} ")
+    MyUser selectByName(@Param("name") String name);
+
 }
