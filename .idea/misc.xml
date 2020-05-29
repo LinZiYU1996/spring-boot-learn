@@ -31,6 +31,7 @@
         <option value="$PROJECT_DIR$/spring-boot-Shiro/pom.xml" />
         <option value="$PROJECT_DIR$/Shiro/pom.xml" />
         <option value="$PROJECT_DIR$/jwt-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-test/pom.xml" />
       </list>
     </option>
   </component>

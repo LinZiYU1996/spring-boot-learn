@@ -8,30 +8,31 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-future" />
         <module name="spring-learn-annotation" />
-        <module name="spring-boot-mysql" />
-        <module name="spring-boot-jwt" />
+        <module name="spring-boot-redis" />
         <module name="spring-boot-netty" />
         <module name="springboot-event" />
         <module name="Shiro" />
-        <module name="springboot-mybatis-plus" />
-        <module name="jwt-redis" />
+        <module name="Jwt" />
         <module name="swagger" />
+        <module name="redis-test" />
         <module name="spring-boot-jpa-thymeleaf-curd" />
         <module name="spring-boot-mybatis-annotation" />
-        <module name="spring-boot-dataway" />
-        <module name="springboot-schedule" />
         <module name="springboot-exception" />
+        <module name="springboot-schedule" />
+        <module name="spring-boot-dataway" />
         <module name="spring-boot-aop" />
+        <module name="SpringBoot-mybatis-springsecurity" />
         <module name="Mybatis-Plus" />
         <module name="spring-boot-jpa" />
-        <module name="Jwt" />
+        <module name="springboot-mybatis-plus" />
         <module name="spring-boot-mybatis-plus" />
-        <module name="quick-mybatis-plus" />
+        <module name="spring-boot-mysql" />
         <module name="spring-boot-swagger" />
-        <module name="spring-bean-lifecycle" />
         <module name="spring-boot-Shiro" />
-        <module name="SpringBoot-mybatis-springsecurity" />
-        <module name="spring-boot-redis" />
+        <module name="spring-bean-lifecycle" />
+        <module name="quick-mybatis-plus" />
+        <module name="jwt-redis" />
+        <module name="spring-boot-jwt" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -48,6 +49,7 @@
       <module name="SpringBoot-mybatis-springsecurity" options="-parameters" />
       <module name="jwt-redis" options="-parameters" />
       <module name="quick-mybatis-plus" options="-parameters" />
+      <module name="redis-test" options="-parameters" />
       <module name="spring-bean-lifecycle" options="-parameters" />
       <module name="spring-boot-Shiro" options="-parameters" />
       <module name="spring-boot-aop" options="-parameters" />
