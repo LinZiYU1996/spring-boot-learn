@@ -32,6 +32,9 @@
         <option value="$PROJECT_DIR$/Shiro/pom.xml" />
         <option value="$PROJECT_DIR$/jwt-redis/pom.xml" />
         <option value="$PROJECT_DIR$/redis-test/pom.xml" />
+        <option value="$PROJECT_DIR$/RESTful-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/safe-api/pom.xml" />
+        <option value="$PROJECT_DIR$/BeetlSQL/pom.xml" />
       </list>
     </option>
   </component>
