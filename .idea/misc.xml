@@ -35,6 +35,8 @@
         <option value="$PROJECT_DIR$/RESTful-jpa/pom.xml" />
         <option value="$PROJECT_DIR$/safe-api/pom.xml" />
         <option value="$PROJECT_DIR$/BeetlSQL/pom.xml" />
+        <option value="$PROJECT_DIR$/elasticsearch/pom.xml" />
+        <option value="$PROJECT_DIR$/vue-login/pom.xml" />
       </list>
     </option>
   </component>
