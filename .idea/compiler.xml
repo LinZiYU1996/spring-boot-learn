@@ -10,7 +10,8 @@
         <module name="elasticsearch" />
         <module name="springboot-future" />
         <module name="spring-boot-dataway" />
-        <module name="spring-boot-redis" />
+        <module name="login" />
+        <module name="springboot-event" />
         <module name="BeetlSQL" />
         <module name="spring-boot-netty" />
         <module name="spring-boot-mybatis-annotation" />
@@ -21,21 +22,21 @@
         <module name="vue-login" />
         <module name="springboot-schedule" />
         <module name="Shiro" />
-        <module name="quick-mybatis-plus" />
+        <module name="spring-boot-swagger" />
         <module name="springboot-exception" />
         <module name="spring-bean-lifecycle" />
         <module name="jwt-redis" />
         <module name="redis-test" />
-        <module name="spring-boot-swagger" />
         <module name="Jwt" />
-        <module name="springboot-mybatis-plus" />
-        <module name="springboot-event" />
+        <module name="spring-boot-redis" />
         <module name="safe-api" />
         <module name="spring-boot-jpa" />
         <module name="swagger" />
         <module name="RESTful-jpa" />
         <module name="Mybatis-Plus" />
         <module name="spring-boot-Shiro" />
+        <module name="springboot-mybatis-plus" />
+        <module name="quick-mybatis-plus" />
         <module name="spring-learn-annotation" />
         <module name="spring-boot-mybatis-plus" />
       </profile>
@@ -56,6 +57,7 @@
       <module name="SpringBoot-mybatis-springsecurity" options="-parameters" />
       <module name="elasticsearch" options="-parameters" />
       <module name="jwt-redis" options="-parameters" />
+      <module name="login" options="-parameters" />
       <module name="quick-mybatis-plus" options="-parameters" />
       <module name="redis-test" options="-parameters" />
       <module name="safe-api" options="-parameters" />

@@ -37,6 +37,7 @@
         <option value="$PROJECT_DIR$/BeetlSQL/pom.xml" />
         <option value="$PROJECT_DIR$/elasticsearch/pom.xml" />
         <option value="$PROJECT_DIR$/vue-login/pom.xml" />
+        <option value="$PROJECT_DIR$/login/pom.xml" />
       </list>
     </option>
   </component>
