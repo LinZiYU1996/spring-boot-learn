@@ -45,8 +45,9 @@ public class Account {
 
         System.out.println(user.getUsername() + "{}" + user.getPassword());
         Map<String,Object> map = new HashMap<>(6) ;
+        Result result;
         if("123".equals(user.getUsername())&&"123".equals(user.getPassword())){
-            Result result = Result.succ(map);
+             result = Result.succ(map);
             map.put("token", 123);
             map.put("flag","false") ;
             map.put("msg","用户名或密码错误") ;
@@ -54,7 +55,20 @@ public class Account {
         }
         map.put("flag","false") ;
         map.put("msg","用户名或密码错误") ;
-        return Result.succ(new Object()) ;
+        result = Result.error(map);
+        return result;
+    }
+
+    @GetMapping("/g")
+    public Result getMsg() {
+
+        Map<String,Object> map = new HashMap<>(6) ;
+        Result result = Result.succ(map);
+        map.put("token", 123);
+        map.put("flag","false") ;
+        map.put("msg","用户名或密码错误") ;
+        return result;
+
     }
 
 }

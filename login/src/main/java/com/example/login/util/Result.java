@@ -28,6 +28,19 @@ public class Result implements Serializable {
         return r;
     }
 
+    public static Result error(Object data) {
+        return errpr(500, "操作成功", data);
+    }
+
+    public static Result errpr(int code, String msg, Object data) {
+
+        Result r = new Result();
+        r.setCode(code);
+        r.setMsg(msg);
+        r.setData(data);
+        return r;
+    }
+
 
     public int getCode() {
         return code;
