@@ -40,6 +40,20 @@ public class Account {
 //    }
 
 
+
+    /*
+
+    js
+
+
+      console.log(res.data.code+"{}");
+        console.log(res.data.msg+"{}");
+        console.log(res.data.data.token+"{}");
+
+
+
+     */
+
     @PostMapping("/login")
     public  Result login(@RequestBody User user) {
 

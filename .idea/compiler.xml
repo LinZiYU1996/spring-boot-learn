@@ -7,13 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringBoot-mybatis-springsecurity" />
-        <module name="elasticsearch" />
+        <module name="swagger" />
         <module name="springboot-future" />
         <module name="spring-boot-dataway" />
         <module name="login" />
         <module name="springboot-event" />
         <module name="BeetlSQL" />
-        <module name="spring-boot-netty" />
         <module name="spring-boot-mybatis-annotation" />
         <module name="spring-boot-jpa-thymeleaf-curd" />
         <module name="spring-boot-mysql" />
@@ -21,17 +20,19 @@
         <module name="spring-boot-aop" />
         <module name="vue-login" />
         <module name="springboot-schedule" />
+        <module name="blog" />
         <module name="Shiro" />
         <module name="spring-boot-swagger" />
         <module name="springboot-exception" />
         <module name="spring-bean-lifecycle" />
         <module name="jwt-redis" />
         <module name="redis-test" />
+        <module name="elasticsearch" />
         <module name="Jwt" />
         <module name="spring-boot-redis" />
         <module name="safe-api" />
         <module name="spring-boot-jpa" />
-        <module name="swagger" />
+        <module name="spring-boot-netty" />
         <module name="RESTful-jpa" />
         <module name="Mybatis-Plus" />
         <module name="spring-boot-Shiro" />
@@ -55,6 +56,7 @@
       <module name="Shiro" options="-parameters" />
       <module name="Spring-Boot-Security-JWT" options="-parameters" />
       <module name="SpringBoot-mybatis-springsecurity" options="-parameters" />
+      <module name="blog" options="-parameters" />
       <module name="elasticsearch" options="-parameters" />
       <module name="jwt-redis" options="-parameters" />
       <module name="login" options="-parameters" />

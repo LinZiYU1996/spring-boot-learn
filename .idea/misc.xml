@@ -38,6 +38,7 @@
         <option value="$PROJECT_DIR$/elasticsearch/pom.xml" />
         <option value="$PROJECT_DIR$/vue-login/pom.xml" />
         <option value="$PROJECT_DIR$/login/pom.xml" />
+        <option value="$PROJECT_DIR$/blog/pom.xml" />
       </list>
     </option>
   </component>
