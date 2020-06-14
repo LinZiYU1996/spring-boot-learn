@@ -7,6 +7,8 @@ import com.example.blog.core.mapper.VblogArticleTagMapper;
 import com.example.blog.core.service.IVblogArticleTagService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  * 文章标签表 服务实现类
@@ -18,4 +20,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class VblogArticleTagServiceImpl extends ServiceImpl<VblogArticleTagMapper, VblogArticleTag> implements IVblogArticleTagService {
 
+    @Override
+    public List<Integer> queryHotTagIds(Integer limit) {
+        List<Integer> hotTagIds = this.baseMapper.queryHotTagIds(limit);
+        return hotTagIds;
+    }
 }

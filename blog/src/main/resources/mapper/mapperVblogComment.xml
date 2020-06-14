@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.blog.core.mapper.VblogCommentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.blog.core.entity.VblogComment">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="article_id" property="articleId" />
+        <result column="content" property="content" />
+        <result column="parent_id" property="parentId" />
+        <result column="to_uid" property="toUid" />
+        <result column="level_flag" property="levelFlag" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_id, article_id, content, parent_id, to_uid, level_flag, create_time, update_time
+    </sql>
+
+    <select id="queryArticleComments"  parameterType="Long" resultType="com.example.blog.core.vo.CommentVo">
+        SELECT vc.*, vu.avatar,vu.nickname FROM vblog_comment vc LEFT JOIN vblog_user vu ON vc.user_id=vu.id
+        WHERE vc.article_id=#{articleId} AND vc.level_flag='0' ORDER BY vc.create_time DESC
+    </select>
+
+    <select id="queryChildrenComments"  parameterType="com.example.blog.core.dto.ChildCommentDto" resultType="com.example.blog.core.vo.CommentVo">
+        SELECT vc.*, vu.avatar,vu.nickname FROM vblog_comment vc LEFT JOIN vblog_user vu ON vc.user_id=vu.id
+        WHERE vc.article_id=#{articleId} AND vc.parent_id=#{parentId} ORDER BY vc.create_time ASC
+    </select>
+
+
+
+
+</mapper>
