@@ -18,4 +18,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class VblogUserServiceImpl extends ServiceImpl<VblogUserMapper, VblogUser> implements IVblogUserService {
 
+
+    @Override
+    public VblogUser queryByUserAccount(String username) {
+        return baseMapper.queryByUserAccount(username);
+    }
 }

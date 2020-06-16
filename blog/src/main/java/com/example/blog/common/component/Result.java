@@ -1,5 +1,7 @@
 package com.example.blog.common.component;
 
+import org.apache.http.HttpStatus;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,10 +50,24 @@ public class Result extends HashMap<String, Object> {
     }
 
 
+    public static Result ok() {
+        return new Result();
+    }
+
+
+
+    public static Result error() {
+        return error(HttpStatus.SC_INTERNAL_SERVER_ERROR, "未知异常，请联系管理员");
+    }
+
+    public static Result error(String msg) {
+        return error(HttpStatus.SC_INTERNAL_SERVER_ERROR, msg);
+    }
+
 
 
     @Override
-    public Object put(String key, Object value) {
+    public Result put(String key, Object value) {
         super.put(key, value);
         return this;
     }

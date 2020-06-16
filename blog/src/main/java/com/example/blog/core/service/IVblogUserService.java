@@ -14,4 +14,8 @@ import com.example.blog.core.entity.VblogUser;
  */
 public interface IVblogUserService extends IService<VblogUser> {
 
+    // 根据用户名，查询系统用户
+
+    VblogUser queryByUserAccount(String username);
+
 }

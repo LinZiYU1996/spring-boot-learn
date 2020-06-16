@@ -209,6 +209,12 @@ public class VblogArticle extends Model<VblogArticle> {
         return this.id;
     }
 
+
+    public String[] getTagArray() {
+        return tags!= null ? tags.split(",") : null;
+    }
+
+
     @Override
     public String toString() {
         return "VblogArticle{" +

@@ -8,12 +8,15 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.example.blog.common.exception.RestException;
 import com.example.blog.common.utils.Query;
-import com.example.blog.core.entity.ArticleEntity;
-import com.example.blog.core.entity.VblogArticle;
+import com.example.blog.core.entity.*;
 import com.example.blog.core.mapper.VblogArticleMapper;
 import com.example.blog.core.service.IVblogArticleService;
+import com.example.blog.core.service.IVblogArticleTagService;
+import com.example.blog.core.service.IVblogCategoryService;
+import com.example.blog.core.service.IVblogUserService;
 import com.example.blog.core.vo.ArticleArchivesVo;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -32,6 +35,15 @@ import java.util.Map;
 public class VblogArticleServiceImpl extends ServiceImpl<VblogArticleMapper, VblogArticle> implements IVblogArticleService {
 
 
+
+    @Autowired
+    private IVblogUserService userService;
+
+    @Autowired
+    private IVblogCategoryService categoryService;
+
+    @Autowired
+    private IVblogArticleTagService articleTagService;
     @Override
     public List<VblogArticle> queryPage(Map<String, Object> params) {
         EntityWrapper<VblogArticle> entityEntityWrapper = new EntityWrapper<>();
@@ -73,7 +85,7 @@ public class VblogArticleServiceImpl extends ServiceImpl<VblogArticleMapper, Vbl
             object.put("title", article.getTitle());
             object.put("summary", article.getSummary());
             object.put("weight", article.getWeight());
-            object.put("tags", article.getTags());
+            object.put("tags", article.getTagArray());   // 返回string 数组
             object.put("createTime", article.getCreateTime());
             object.put("viewNum", article.getViewNum());
             object.put("commentNum", article.getCommentNum());
@@ -90,7 +102,6 @@ public class VblogArticleServiceImpl extends ServiceImpl<VblogArticleMapper, Vbl
     public JSONObject getArticleDetailAndAddViewNum(Long articleId) {
 
         VblogArticle article = this.selectById(articleId);
-
         if (article == null) {
             throw new RestException("该文章不存在");
         }
@@ -107,11 +118,24 @@ public class VblogArticleServiceImpl extends ServiceImpl<VblogArticleMapper, Vbl
         object.put("commentNum", article.getCommentNum());
         object.put("content", article.getContent());
 
+        // 2、文章作者信息
+        VblogUser userEntity = userService.selectById(article.getUserId());
+        JSONObject user = new JSONObject();
+        user.put("id", userEntity.getId());
+        user.put("avatar", userEntity.getAvatar());
+        user.put("nickname", userEntity.getNickname());
+        object.put("author", user);
 
+        // 3、文章所属分类信息
+        VblogCategory categoryEntity = categoryService.selectById(article.getCategoryId());
+        object.put("category", categoryEntity);
+
+        // 4、文章所属标签信息
+        List<VblogTag> tagEntities = articleTagService.queryArticleTags(article.getId());
+        object.put("tags", tagEntities);
 
         // 5、文章阅读数 + 1
         this.updateById(article);
-
 
         return object;
     }

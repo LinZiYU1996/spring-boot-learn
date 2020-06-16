@@ -24,4 +24,10 @@
         id, account, password, salt, email, phone, last_login_time, nickname, avatar, admin, status, create_time, update_time
     </sql>
 
+
+    <select id="queryByUserAccount" resultType="com.example.blog.core.entity.VblogUser">
+        select * from vblog_user where account = #{account}
+    </select>
+
+
 </mapper>

@@ -3,6 +3,7 @@ package com.example.blog.core.service.impl;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.example.blog.core.entity.VblogArticleTag;
+import com.example.blog.core.entity.VblogTag;
 import com.example.blog.core.mapper.VblogArticleTagMapper;
 import com.example.blog.core.service.IVblogArticleTagService;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,12 @@ public class VblogArticleTagServiceImpl extends ServiceImpl<VblogArticleTagMappe
     public List<Integer> queryHotTagIds(Integer limit) {
         List<Integer> hotTagIds = this.baseMapper.queryHotTagIds(limit);
         return hotTagIds;
+    }
+
+    // 获取文章所有标签
+
+    @Override
+    public List<VblogTag> queryArticleTags(Long articleId) {
+        return this.baseMapper.queryArticleTags(articleId);
     }
 }

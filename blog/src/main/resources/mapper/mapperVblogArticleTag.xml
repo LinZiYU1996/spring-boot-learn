@@ -22,6 +22,9 @@
           limit 0,#{limit}
     </select>
 
-
+    <select id="queryArticleTags" parameterType="Long" resultType="com.example.blog.core.entity.VblogTag">
+        SELECT vt.* from vblog_article_tag vat INNER JOIN vblog_tag vt ON vat.tag_id=vt.id
+        where vat.article_id=#{articleId}
+    </select>
 
 </mapper>
