@@ -5,8 +5,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.example.blog.common.component.Result;
+import com.example.blog.common.exception.RestException;
+import com.example.blog.common.utils.ShiroUtils;
 import com.example.blog.core.entity.ArticleEntity;
 import com.example.blog.core.entity.VblogArticle;
+import com.example.blog.core.entity.VblogUser;
 import com.example.blog.core.service.IVblogArticleService;
 import com.example.blog.core.vo.ArticleArchivesVo;
 import lombok.extern.slf4j.Slf4j;
@@ -105,4 +108,27 @@ public class ArticleController {
         List<ArticleArchivesVo> archivesVos = articleService.queyArticleArchives(ARTICLE_ARCHIVE_LIMIT_NUM);
         return Result.ok(archivesVos);
     }
+
+    //文章编辑与新增
+    @PostMapping("/publish")
+    public Result save(@RequestBody JSONObject json) {
+        VblogUser userEntity = ShiroUtils.getUserEntity();
+        Long id = json.getLong("id");
+        if (id != null) {
+            //编辑文章
+            VblogArticle article = articleService.selectById(id);
+            if (article == null) {
+                throw new RestException("参数错误");
+            }
+            articleService.updateOneArticle(userEntity, article, json);
+        } else {
+            //新增文章
+            id = articleService.addOneArticle(userEntity, json);
+        }
+
+        JSONObject object = new JSONObject();
+        object.put("articleId", id);
+        return Result.ok(object);
+    }
+
 }

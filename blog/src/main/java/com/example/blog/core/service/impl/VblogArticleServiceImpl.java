@@ -10,18 +10,14 @@ import com.example.blog.common.exception.RestException;
 import com.example.blog.common.utils.Query;
 import com.example.blog.core.entity.*;
 import com.example.blog.core.mapper.VblogArticleMapper;
-import com.example.blog.core.service.IVblogArticleService;
-import com.example.blog.core.service.IVblogArticleTagService;
-import com.example.blog.core.service.IVblogCategoryService;
-import com.example.blog.core.service.IVblogUserService;
+import com.example.blog.core.service.*;
 import com.example.blog.core.vo.ArticleArchivesVo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * <p>
@@ -44,6 +40,10 @@ public class VblogArticleServiceImpl extends ServiceImpl<VblogArticleMapper, Vbl
 
     @Autowired
     private IVblogArticleTagService articleTagService;
+
+    @Autowired
+    private IVblogTagService tagService;
+
     @Override
     public List<VblogArticle> queryPage(Map<String, Object> params) {
         EntityWrapper<VblogArticle> entityEntityWrapper = new EntityWrapper<>();
@@ -144,5 +144,132 @@ public class VblogArticleServiceImpl extends ServiceImpl<VblogArticleMapper, Vbl
     @Override
     public List<ArticleArchivesVo> queyArticleArchives(int limit) {
         return this.baseMapper.queyArticleArchives(limit);
+    }
+
+
+    // 添加一篇新文章
+
+    @Override
+    public Long addOneArticle(VblogUser userEntity, JSONObject json) {
+        Map<Integer, String> maps = getTagMapInfos();
+
+        // 1、保存文章信息
+        VblogArticle article = new VblogArticle();
+        article.setUserId(userEntity.getId());
+        article.setNickname(userEntity.getNickname());
+        article.setCommentNum(0);
+        article.setViewNum(0);
+        article.setCreateTime(new Date());
+        article.setUpdateTime(new Date());
+        article.setWeight(0);
+        article.setTitle(json.getString("title"));
+        article.setSummary(json.getString("summary"));
+
+        JSONObject body = json.getJSONObject("body");
+        article.setContent(body.getString("content"));
+        article.setContentHtml(body.getString("contentHtml"));
+
+        // 2、设置分类信息
+        JSONObject category = json.getJSONObject("category");
+        article.setCategoryId(category.getInteger("id"));
+
+        // 3、设置标签信息
+        JSONArray tags = json.getJSONArray("tags");
+        StringBuilder tagStr = new StringBuilder();
+        for (int i = 0; i < tags.size(); i++ ) {
+            Integer tagId = tags.getJSONObject(i).getInteger("id");
+            if (i != 0){
+                tagStr.append(",");
+            }
+            tagStr.append(maps.get(tagId));
+        }
+        article.setTags(tagStr.toString());
+
+        // 4、插入文章信息
+        this.insert(article);
+        Long id = article.getId();
+
+        // 5、插入文章对应的标签信息
+        List<VblogArticleTag> articleTagEntityList = new ArrayList<>();
+        for (int i = 0; i < tags.size(); i++ ) {
+            Integer tagId = tags.getJSONObject(i).getInteger("id");
+            VblogArticleTag articleTagEntity = new VblogArticleTag();
+            articleTagEntity.setArticleId(id);
+            articleTagEntity.setTagId(tagId);
+            articleTagEntity.setCreateTime(new Date());
+            articleTagEntity.setUpdateTime(new Date());
+            articleTagEntityList.add(articleTagEntity);
+        }
+        articleTagService.insertBatch(articleTagEntityList);
+
+        return id;
+    }
+
+
+    // 获取标签Map数据
+    private  Map<Integer, String> getTagMapInfos() {
+        List<VblogTag> tagEntities = tagService.selectList(null);
+        Map<Integer, String> map = new HashMap<>();
+        for (VblogTag tag: tagEntities){
+            map.put(tag.getId(), tag.getTagName());
+        }
+        return map;
+    }
+
+
+
+    // 更新一篇文章
+    @Override
+    public Long updateOneArticle(VblogUser userEntity, VblogArticle article, JSONObject json) {
+        Long id = article.getId();
+        Map<Integer, String> map = getTagMapInfos();
+
+        // 1、更新文章信息
+        article.setTitle(json.getString("title"));
+        article.setSummary(json.getString("summary"));
+
+        JSONObject body = json.getJSONObject("body");
+        article.setContent(body.getString("content"));
+        article.setContentHtml(body.getString("contentHtml"));
+
+        JSONObject category = json.getJSONObject("category");
+        if (article.getCategoryId().intValue() != category.getInteger("id").intValue()) {
+            article.setCategoryId(category.getInteger("id"));
+        }
+
+        // 2、获取文章对应的标签信息
+        List<VblogArticleTag> articleTagEntityList = new ArrayList<>();
+        StringBuilder tagStr = new StringBuilder();
+        JSONArray tags = json.getJSONArray("tags");
+        for (int i = 0; i < tags.size(); i++ ) {
+            Integer tagId = tags.getJSONObject(i).getInteger("id");
+            if (i != 0){
+                tagStr.append(",");
+            }
+            tagStr.append(map.get(tagId));
+
+            VblogArticleTag articleTagEntity = new VblogArticleTag();
+            articleTagEntity.setArticleId(id);
+            articleTagEntity.setTagId(tagId);
+            articleTagEntity.setCreateTime(new Date());
+            articleTagEntity.setUpdateTime(new Date());
+            articleTagEntityList.add(articleTagEntity);
+        }
+        article.setTags(tagStr.toString());
+
+        article.setUpdateTime(new Date());
+        article.setUserId(userEntity.getId());
+        article.setNickname(userEntity.getNickname());
+        this.updateById(article);
+
+        // 3、删除之前的文章标签信息
+        EntityWrapper<VblogArticleTag> entityWrapper = new EntityWrapper<>();
+        entityWrapper.eq("article_id", id);
+        articleTagService.delete(entityWrapper);
+
+        // 4、更新文章标签信息
+        articleTagService.insertBatch(articleTagEntityList);
+
+        return id;
     }
 }

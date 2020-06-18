@@ -1,22 +1,26 @@
 package com.example.blog.core.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.example.blog.common.component.Result;
 import com.example.blog.common.constant.Constant;
+import com.example.blog.common.utils.ShiroUtils;
 import com.example.blog.core.entity.VblogUser;
+import com.example.blog.core.entity.VblogUserToken;
 import com.example.blog.core.service.IVblogUserService;
 import com.example.blog.core.service.IVblogUserTokenService;
+import com.example.blog.shiro.TokenGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.crypto.hash.Sha256Hash;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.print.attribute.standard.PrinterURI;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -71,4 +75,28 @@ public class LoginController {
         Result r = userTokenService.createToken(user.getId());
         return r;
     }
+
+
+    // 退出登录
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public Result logout() {
+        Long userId = ShiroUtils.getUserId();
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        try {
+            VblogUserToken tokenEntity = userTokenService.selectOne(new EntityWrapper<VblogUserToken>().eq("user_id", userId));
+            if (tokenEntity != null) {
+                String token = TokenGenerator.generateValue();
+                tokenEntity.setToken(token);
+                tokenEntity.setExpireTime(new Date());
+                tokenEntity.setUpdateTime(new Date());
+                userTokenService.updateById(tokenEntity);
+            }
+        } catch (Exception e) {
+            log.warn("退出登录, 更新token失败！", e);
+        }
+        return Result.ok();
+    }
+
 }

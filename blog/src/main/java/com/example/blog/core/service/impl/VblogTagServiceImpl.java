@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.example.blog.core.entity.VblogTag;
 import com.example.blog.core.mapper.VblogTagMapper;
 import com.example.blog.core.service.IVblogTagService;
+import com.example.blog.core.vo.TagVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,5 +29,18 @@ public class VblogTagServiceImpl extends ServiceImpl<VblogTagMapper, VblogTag> i
         } else {
             return this.baseMapper.queryHotTagDetails(tagIds);
         }
+    }
+
+
+    // 查询单条标签详情
+
+    @Override
+    public TagVo queryOneTagDetail(Integer tagId) {
+        return this.baseMapper.queryOneTagDetail(tagId);
+    }
+
+    @Override
+    public List<TagVo> queryTagDetails() {
+        return this.baseMapper.queryTagDetails();
     }
 }

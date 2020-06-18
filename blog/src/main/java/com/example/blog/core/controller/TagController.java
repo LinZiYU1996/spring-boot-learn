@@ -1,17 +1,17 @@
 package com.example.blog.core.controller;
 
 import com.example.blog.common.component.Result;
+import com.example.blog.common.validator.ValidatorUtils;
 import com.example.blog.core.entity.TagEntity;
 import com.example.blog.core.entity.VblogTag;
 import com.example.blog.core.service.IVblogArticleTagService;
 import com.example.blog.core.service.IVblogTagService;
+import com.example.blog.core.vo.TagVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -57,6 +57,53 @@ public class TagController {
         }*/
         List<VblogTag> tagEntities = tagService.queryHotTagDetails(tagIds.toArray(tagIdsArray));
         return Result.ok(tagEntities);
+    }
+
+
+    //  查询标签详情
+    @GetMapping("/detail")
+    public Result detail() {
+        log.info(" TagController  detail");
+        List<TagVo> tagVos = tagService.queryTagDetails();
+        return Result.ok(tagVos);
+    }
+
+
+    // 单条标签详情
+    @GetMapping("/detail/{tagId}")
+    public Result detailById(@PathVariable("tagId") Integer tagId) {
+        log.info(" TagController/detail/{tagId} ");
+        TagVo tagVo = tagService.queryOneTagDetail(tagId);
+        return Result.ok(tagVo);
+    }
+
+    // 保存
+
+    @RequestMapping("/save")
+    public Result save(@RequestBody VblogTag tag) {
+        tagService.insert(tag);
+
+        return Result.ok();
+    }
+
+    // 修改
+
+    @RequestMapping("/update")
+    public Result update(@RequestBody VblogTag tag) {
+        ValidatorUtils.validateEntity(tag);
+        //全部更新
+        tagService.updateAllColumnById(tag);
+
+        return Result.ok();
+    }
+
+
+    //删除
+    @RequestMapping("/delete")
+    public Result delete(@RequestBody Integer[] ids) {
+        tagService.deleteBatchIds(Arrays.asList(ids));
+
+        return Result.ok();
     }
 
 }

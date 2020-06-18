@@ -16,4 +16,19 @@
         id, category_name, avatar, description, create_time
     </sql>
 
+
+    <select id="queryCategoryDetails" resultType="com.example.blog.core.vo.CategoryVo">
+        select c.*, count(a.category_id) as articles from vblog_category c
+            left join vblog_article a on a.category_id = c.id
+        group by c.id
+    </select>
+
+    <select id="queryOneCategoryDetail" parameterType="Integer" resultType="com.example.blog.core.vo.CategoryVo">
+        select c.*, count(a.category_id) as articles from vblog_category c
+        left join vblog_article a on a.category_id = c.id
+        where a.category_id = #{categoryId}
+    </select>
+
+
+
 </mapper>

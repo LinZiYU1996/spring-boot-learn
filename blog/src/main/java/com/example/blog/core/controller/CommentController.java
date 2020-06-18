@@ -4,21 +4,19 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.example.blog.common.component.Result;
+import com.example.blog.common.exception.RestException;
+import com.example.blog.common.utils.ShiroUtils;
 import com.example.blog.core.dto.AuthorDto;
 import com.example.blog.core.dto.ChildCommentDto;
-import com.example.blog.core.entity.CommentEntity;
-import com.example.blog.core.entity.VblogComment;
-import com.example.blog.core.entity.VblogUser;
+import com.example.blog.core.entity.*;
+import com.example.blog.core.service.IVblogArticleService;
 import com.example.blog.core.service.IVblogCommentService;
 import com.example.blog.core.service.IVblogUserService;
 import com.example.blog.core.vo.CommentVo;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.DateTimeLiteralExpression;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.joda.time.DateTime;
 import java.util.List;
 
@@ -44,6 +42,10 @@ public class CommentController {
 
     @Autowired
     private IVblogUserService userService;
+
+    @Autowired
+    private IVblogArticleService articleService;
+
 
     // 获取某篇文章的评论
 
@@ -100,6 +102,20 @@ public class CommentController {
         return array;
     }
 
+    // 发表评论
+    @PostMapping("/create/change")
+    public Result save(@RequestBody JSONObject json) {
+        VblogUser userEntity = ShiroUtils.getUserEntity();
+
+        Long articleId = json.getJSONObject("article").getLong("id");
+        VblogArticle articleEntity = articleService.selectById(articleId);
+        if (articleEntity == null) {
+            throw new RestException("参数有误");
+        }
+        JSONObject object = commentService.publishArticleComment(articleEntity, userEntity, json);
+
+        return Result.ok(object);
+    }
 
 
 
