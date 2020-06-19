@@ -2,7 +2,6 @@ package com.example.blog.core.controller;
 
 import com.example.blog.common.component.Result;
 import com.example.blog.common.validator.ValidatorUtils;
-import com.example.blog.core.entity.CategoryEntity;
 import com.example.blog.core.entity.VblogCategory;
 import com.example.blog.core.service.IVblogCategoryService;
 import com.example.blog.core.vo.CategoryVo;

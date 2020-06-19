@@ -50,6 +50,8 @@ public class VblogArticleServiceImpl extends ServiceImpl<VblogArticleMapper, Vbl
 
         String categoryIdStr = (String) params.get("categoryId");
 
+        String useridS = (String) params.get("user_id");
+
         if (StringUtils.isNotBlank(categoryIdStr)){
             Integer categoryId = Integer.parseInt(categoryIdStr);
             entityEntityWrapper.eq("category_id", categoryId);
@@ -61,15 +63,29 @@ public class VblogArticleServiceImpl extends ServiceImpl<VblogArticleMapper, Vbl
             entityEntityWrapper.eq("year(create_time)", year);
             entityEntityWrapper.eq("month(create_time)", month);
         }
+        Page<VblogArticle> page = null;
 
 
-        Page<VblogArticle> page = this.selectPage(
-                new Query<VblogArticle>(params).getPage(),
-                entityEntityWrapper
-        );
+        if (StringUtils.isNotBlank(useridS)) {
+            Long user_id = Long.parseLong(useridS);
+            System.out.println(user_id);
+            entityEntityWrapper.eq("user_id", user_id);
+            page = this.selectPage(
+                    new Query<VblogArticle>(params).getPage(),
+                    entityEntityWrapper
+            );
+        } else {
+            System.out.println("******");
+            page = this.selectPage(
+                    new Query<VblogArticle>(params).getPage(),
+                    entityEntityWrapper
+            );
+        }
 
         return page.getRecords();
     }
+
+
 
 
     //格式化文章列表输出

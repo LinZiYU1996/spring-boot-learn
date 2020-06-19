@@ -7,14 +7,12 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.example.blog.common.component.Result;
 import com.example.blog.common.exception.RestException;
 import com.example.blog.common.utils.ShiroUtils;
-import com.example.blog.core.entity.ArticleEntity;
 import com.example.blog.core.entity.VblogArticle;
 import com.example.blog.core.entity.VblogUser;
 import com.example.blog.core.service.IVblogArticleService;
 import com.example.blog.core.vo.ArticleArchivesVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,6 +42,11 @@ public class ArticleController {
     // 针对文章 分页查询
     @GetMapping("/list")
     public Result list(@RequestParam Map<String, Object> params) {
+        log.info("*************************");
+        for (String s : params.keySet()) {
+            log.info(s + "{}{} " + params.get(s));
+        }
+        log.info("*************************");
         params.put("sidx", "view_num");
         params.put("order", "DESC");
 
@@ -51,6 +54,9 @@ public class ArticleController {
         JSONArray array = articleService.getFormatArticleList(list);
         return Result.ok(array);
     }
+
+
+
 
 
     //最热文章

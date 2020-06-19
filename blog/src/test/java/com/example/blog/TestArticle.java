@@ -54,6 +54,28 @@ public class TestArticle {
 
     }
 
+    @Test
+    public void Test_queryPageID() {
+
+        Map<String, Object> params = new HashMap<>();
+
+        params.put("sidx", "view_num");
+        params.put("order", "DESC");
+        params.put("pageSize", "10");
+        params.put("pageNo", "1");
+        params.put("sort", "desc");
+        params.put("user_id", "1001");
+
+        List<VblogArticle> articles = articleService.queryPage(params);
+
+        for (VblogArticle article : articles) {
+            System.out.println(article.toString());
+        }
+
+    }
+
+
+
 
     @Test
     public void Test_listHotArticles() {

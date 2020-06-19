@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.example.blog.core.dto.AuthorDto;
 import com.example.blog.core.dto.ChildCommentDto;
-import com.example.blog.core.entity.CommentEntity;
 import com.example.blog.core.entity.VblogArticle;
 import com.example.blog.core.entity.VblogComment;
 import com.example.blog.core.entity.VblogUser;
