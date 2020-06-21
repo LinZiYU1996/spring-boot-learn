@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.enums.IdType;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -55,7 +56,7 @@ public class VblogUser extends Model<VblogUser> {
     /**
      * 上次登录时间
      */
-    private LocalDateTime lastLoginTime;
+    private Date lastLoginTime;
 
     /**
      * 用户昵称
@@ -80,12 +81,12 @@ public class VblogUser extends Model<VblogUser> {
     /**
      * 创建时间
      */
-    private LocalDateTime createTime;
+    private Date createTime;
 
     /**
      * 更新时间
      */
-    private LocalDateTime updateTime;
+    private Date updateTime;
 
 
     public Long getId() {
@@ -136,13 +137,7 @@ public class VblogUser extends Model<VblogUser> {
         this.phone = phone;
     }
 
-    public LocalDateTime getLastLoginTime() {
-        return lastLoginTime;
-    }
 
-    public void setLastLoginTime(LocalDateTime lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
-    }
 
     public String getNickname() {
         return nickname;
@@ -176,19 +171,28 @@ public class VblogUser extends Model<VblogUser> {
         this.status = status;
     }
 
-    public LocalDateTime getCreateTime() {
+
+    public Date getLastLoginTime() {
+        return lastLoginTime;
+    }
+
+    public void setLastLoginTime(Date lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+    }
+
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDateTime createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public LocalDateTime getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(LocalDateTime updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 

@@ -39,6 +39,9 @@
         <option value="$PROJECT_DIR$/vue-login/pom.xml" />
         <option value="$PROJECT_DIR$/login/pom.xml" />
         <option value="$PROJECT_DIR$/blog/pom.xml" />
+        <option value="$PROJECT_DIR$/log_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/aop/pom.xml" />
+        <option value="$PROJECT_DIR$/aop2/pom.xml" />
       </list>
     </option>
   </component>

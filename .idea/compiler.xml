@@ -15,6 +15,7 @@
         <module name="BeetlSQL" />
         <module name="spring-boot-mybatis-annotation" />
         <module name="spring-boot-jpa-thymeleaf-curd" />
+        <module name="aop2" />
         <module name="spring-boot-mysql" />
         <module name="spring-boot-jwt" />
         <module name="spring-boot-aop" />
@@ -27,6 +28,7 @@
         <module name="spring-bean-lifecycle" />
         <module name="jwt-redis" />
         <module name="redis-test" />
+        <module name="spring-learn-annotation" />
         <module name="elasticsearch" />
         <module name="Jwt" />
         <module name="spring-boot-redis" />
@@ -34,11 +36,12 @@
         <module name="spring-boot-jpa" />
         <module name="spring-boot-netty" />
         <module name="RESTful-jpa" />
+        <module name="aop" />
         <module name="Mybatis-Plus" />
         <module name="spring-boot-Shiro" />
         <module name="springboot-mybatis-plus" />
         <module name="quick-mybatis-plus" />
-        <module name="spring-learn-annotation" />
+        <module name="log_demo" />
         <module name="spring-boot-mybatis-plus" />
       </profile>
     </annotationProcessing>
@@ -56,9 +59,12 @@
       <module name="Shiro" options="-parameters" />
       <module name="Spring-Boot-Security-JWT" options="-parameters" />
       <module name="SpringBoot-mybatis-springsecurity" options="-parameters" />
+      <module name="aop" options="-parameters" />
+      <module name="aop2" options="-parameters" />
       <module name="blog" options="-parameters" />
       <module name="elasticsearch" options="-parameters" />
       <module name="jwt-redis" options="-parameters" />
+      <module name="log_demo" options="-parameters" />
       <module name="login" options="-parameters" />
       <module name="quick-mybatis-plus" options="-parameters" />
       <module name="redis-test" options="-parameters" />
