@@ -42,6 +42,7 @@
         <option value="$PROJECT_DIR$/log_demo/pom.xml" />
         <option value="$PROJECT_DIR$/aop/pom.xml" />
         <option value="$PROJECT_DIR$/aop2/pom.xml" />
+        <option value="$PROJECT_DIR$/aop_datasource/pom.xml" />
       </list>
     </option>
   </component>

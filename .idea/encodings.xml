@@ -9,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/SpringBoot-mybatis-springsecurity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop_datasource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blog/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/elasticsearch/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jwt-redis/src/main/java" charset="UTF-8" />

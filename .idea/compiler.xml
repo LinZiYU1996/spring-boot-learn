@@ -13,6 +13,7 @@
         <module name="login" />
         <module name="springboot-event" />
         <module name="BeetlSQL" />
+        <module name="elasticsearch" />
         <module name="spring-boot-mybatis-annotation" />
         <module name="spring-boot-jpa-thymeleaf-curd" />
         <module name="aop2" />
@@ -29,7 +30,7 @@
         <module name="jwt-redis" />
         <module name="redis-test" />
         <module name="spring-learn-annotation" />
-        <module name="elasticsearch" />
+        <module name="aop_datasource" />
         <module name="Jwt" />
         <module name="spring-boot-redis" />
         <module name="safe-api" />
@@ -61,6 +62,7 @@
       <module name="SpringBoot-mybatis-springsecurity" options="-parameters" />
       <module name="aop" options="-parameters" />
       <module name="aop2" options="-parameters" />
+      <module name="aop_datasource" options="-parameters" />
       <module name="blog" options="-parameters" />
       <module name="elasticsearch" options="-parameters" />
       <module name="jwt-redis" options="-parameters" />
