@@ -1,0 +1,25 @@
+# 配置端口
+server:
+  port: 9936
+
+
+spring:
+  # 配置数据源
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:p6spy:mysql://127.0.0.1:3306/t626?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    # MySQL在高版本需要指明是否进行SSL连接 解决则加上 &useSSL=false
+    username: root
+    password: 8317992
+    # 使用druid数据源
+
+
+
+
+
+# Logger Config
+logging:
+  level:
+    com.baomidou.mybatisplus.samples: debug
+
