@@ -44,6 +44,8 @@
         <option value="$PROJECT_DIR$/aop2/pom.xml" />
         <option value="$PROJECT_DIR$/aop_datasource/pom.xml" />
         <option value="$PROJECT_DIR$/mymatis_plus_p6spy/pom.xml" />
+        <option value="$PROJECT_DIR$/http_aop/pom.xml" />
+        <option value="$PROJECT_DIR$/dynamicdatasource/pom.xml" />
       </list>
     </option>
   </component>

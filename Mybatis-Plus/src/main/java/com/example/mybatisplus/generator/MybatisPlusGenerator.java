@@ -98,7 +98,7 @@ public class MybatisPlusGenerator {
                         .setDriverName("com.mysql.jdbc.Driver")
                         .setUsername("root")
                         .setPassword("123456")
-                        .setUrl("jdbc:mysql://127.0.0.1:3306/t626?characterEncoding=utf8&useSSL=false")
+                        .setUrl("jdbc:mysql://127.0.0.1:3306/master?characterEncoding=utf8&useSSL=false")
         ).setStrategy(
                 // 策略配置
                 new StrategyConfig()

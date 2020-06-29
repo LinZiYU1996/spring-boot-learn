@@ -1,0 +1,32 @@
+
+spring:
+  datasource:
+      master:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/master?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 8317992
+      # 使用druid数据源
+      slave1:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/master?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 8317992
+      slave2:
+        url: jdbc:mysql://127.0.0.1:3306/slave2?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: root
+      # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+
+
+      slave3:
+        url: jdbc:mysql://127.0.0.1:3306/slave3?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: root
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+server:
+  port: 9954

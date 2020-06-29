@@ -7,13 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringBoot-mybatis-springsecurity" />
-        <module name="swagger" />
+        <module name="dynamicdatasource" />
+        <module name="elasticsearch" />
         <module name="springboot-future" />
         <module name="spring-boot-dataway" />
         <module name="login" />
         <module name="springboot-event" />
         <module name="BeetlSQL" />
-        <module name="log_demo" />
+        <module name="spring-boot-netty" />
         <module name="spring-boot-mybatis-annotation" />
         <module name="spring-boot-jpa-thymeleaf-curd" />
         <module name="aop2" />
@@ -29,21 +30,22 @@
         <module name="spring-bean-lifecycle" />
         <module name="jwt-redis" />
         <module name="redis-test" />
-        <module name="elasticsearch" />
+        <module name="spring-learn-annotation" />
+        <module name="aop_datasource" />
         <module name="Jwt" />
         <module name="spring-boot-redis" />
         <module name="safe-api" />
         <module name="spring-boot-jpa" />
-        <module name="spring-boot-netty" />
+        <module name="swagger" />
+        <module name="http_aop" />
         <module name="RESTful-jpa" />
-        <module name="aop_datasource" />
         <module name="aop" />
         <module name="Mybatis-Plus" />
         <module name="mymatis_plus_p6spy" />
         <module name="spring-boot-Shiro" />
         <module name="springboot-mybatis-plus" />
         <module name="quick-mybatis-plus" />
-        <module name="spring-learn-annotation" />
+        <module name="log_demo" />
         <module name="spring-boot-mybatis-plus" />
       </profile>
     </annotationProcessing>
