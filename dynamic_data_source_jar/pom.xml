@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lin</groupId>
-    <artifactId>dynamicdatasource</artifactId>
+    <artifactId>dynamic_data_source_jar</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dynamicdatasource</name>
+    <name>dynamic_data_source_jar</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -33,72 +33,85 @@
             </exclusions>
         </dependency>
 
-        <!-- AOP依赖模块 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <!-- AOP依赖模块 -->
 
-        <!-- Web依赖模块 -->
+        <!-- web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- Web依赖模块 -->
+        <!-- web-->
 
-        <!-- ========================= 数据库相关 ========================== -->
+        <!--MP依赖文件 基于3.x版本-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.1.2</version>
+        </dependency>
+        <!--MP依赖文件 基于3.x版本-->
+
+        <!-- MySQL 连接驱动依赖 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
-
-        <!-- ========================= 数据库相关 ========================== -->
-
-
-        <!-- 阿里数据库连接池 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.1.17</version>
-        </dependency>
-        <!-- 阿里数据库连接池 -->
+        <!-- MySQL 连接驱动依赖 -->
 
 
 
-
-        <!--        mybatis-plus-boot-starter-->
+        <!-- 动态数据源 -->
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.1</version>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>2.5.4</version>
         </dependency>
-        <!--        mybatis-plus-boot-starter-->
+        <!-- 动态数据源 -->
 
 
-<!--        mybatis-plus-->
+        <!-- lombok代码简化 -->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus</artifactId>
-            <version>3.3.1</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
         </dependency>
-        <!--        mybatis-plus-->
+        <!-- lombok代码简化 -->
 
 
+        <!--logback-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--logback-->
 
 
+        <!--log日志-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+            <version>2.10.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--log日志-->
 
-<!--        druid-spring-boot-starter-->
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.25</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--slf4j-->
+
+        <!-- druid-spring-boot-starter-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.17</version>
+            <version>1.1.20</version>
         </dependency>
-
-        <!--        druid-spring-boot-starter-->
-
-
+        <!-- druid-spring-boot-starter-->
     </dependencies>
 
     <dependencyManagement>

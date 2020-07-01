@@ -30,3 +30,6 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
 server:
   port: 9954
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.lin.dynamicdatasource.entity

@@ -1,7 +1,7 @@
-package com.lin.dynamicdatasource.mapper;
+package com.lin.dynamic_data_source_jar.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lin.dynamicdatasource.entity.User;
+import com.lin.dynamic_data_source_jar.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

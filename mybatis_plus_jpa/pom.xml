@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.lin</groupId>
-    <artifactId>dynamicdatasource</artifactId>
+    <artifactId>mybatis_plus_jpa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dynamicdatasource</name>
+    <name>mybatis_plus_jpa</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -32,20 +32,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!-- AOP依赖模块 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <!-- AOP依赖模块 -->
-
-        <!-- Web依赖模块 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- Web依赖模块 -->
 
         <!-- ========================= 数据库相关 ========================== -->
         <dependency>
@@ -77,7 +63,7 @@
         <!--        mybatis-plus-boot-starter-->
 
 
-<!--        mybatis-plus-->
+        <!--        mybatis-plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
@@ -89,7 +75,7 @@
 
 
 
-<!--        druid-spring-boot-starter-->
+        <!--        druid-spring-boot-starter-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
@@ -97,6 +83,9 @@
         </dependency>
 
         <!--        druid-spring-boot-starter-->
+
+
+
 
 
     </dependencies>
