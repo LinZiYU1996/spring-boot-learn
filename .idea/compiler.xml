@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="aop" />
         <module name="SpringBoot-mybatis-springsecurity" />
-        <module name="RESTful-jpa" />
         <module name="elasticsearch" />
         <module name="test_starter" />
         <module name="springboot-future" />
@@ -15,7 +15,7 @@
         <module name="login" />
         <module name="springboot-event" />
         <module name="BeetlSQL" />
-        <module name="spring-boot-netty" />
+        <module name="log_demo" />
         <module name="spring-boot-mybatis-annotation" />
         <module name="spring-boot-jpa-thymeleaf-curd" />
         <module name="aop2" />
@@ -26,6 +26,7 @@
         <module name="vue-login" />
         <module name="springboot-schedule" />
         <module name="blog" />
+        <module name="swagger" />
         <module name="Shiro" />
         <module name="spring-boot-swagger" />
         <module name="springboot-exception" />
@@ -35,20 +36,20 @@
         <module name="aop_datasource" />
         <module name="Jwt" />
         <module name="spring-boot-redis" />
-        <module name="http_aop" />
         <module name="safe-api" />
         <module name="spring-boot-jpa" />
-        <module name="swagger" />
+        <module name="spring-boot-netty" />
         <module name="dynamicdatasource" />
-        <module name="spring-learn-annotation" />
-        <module name="aop" />
+        <module name="RESTful-jpa" />
+        <module name="http_aop" />
         <module name="Mybatis-Plus" />
         <module name="mymatis_plus_p6spy" />
         <module name="spring-boot-Shiro" />
         <module name="springboot-mybatis-plus" />
         <module name="dynamic_data_source_jar" />
         <module name="quick-mybatis-plus" />
-        <module name="log_demo" />
+        <module name="aop_data" />
+        <module name="spring-learn-annotation" />
         <module name="spring-boot-mybatis-plus" />
       </profile>
     </annotationProcessing>

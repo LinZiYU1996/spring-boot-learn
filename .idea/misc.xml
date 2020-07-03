@@ -49,6 +49,7 @@
         <option value="$PROJECT_DIR$/mybatis_plus_jpa/pom.xml" />
         <option value="$PROJECT_DIR$/dynamic_data_source_jar/pom.xml" />
         <option value="$PROJECT_DIR$/test_starter/pom.xml" />
+        <option value="$PROJECT_DIR$/aop_data/pom.xml" />
       </list>
     </option>
   </component>
