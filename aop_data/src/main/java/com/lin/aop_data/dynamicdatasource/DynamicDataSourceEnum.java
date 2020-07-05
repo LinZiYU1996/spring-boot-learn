@@ -1,5 +1,9 @@
 package com.lin.aop_data.dynamicdatasource;
 
+
+import lombok.Getter;
+
+@Getter
 public enum DynamicDataSourceEnum {
 
     /**
