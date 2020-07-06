@@ -23,7 +23,7 @@ import java.util.List;
 public interface MyUserMapper extends BaseMapper<MyUser> {
 
     @Select("select * from my_user")
-    List<MyUser> getAll(@Param(Constants.WRAPPER) Wrapper wrapper);
+    List<MyUser> getAll();
 
 
     @Select("select * from my_user where name = #{name} ")

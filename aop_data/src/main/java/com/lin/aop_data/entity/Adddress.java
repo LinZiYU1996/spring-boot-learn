@@ -2,7 +2,9 @@ package com.lin.aop_data.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -15,6 +17,8 @@ import java.io.Serializable;
  * @since 2020-07-05
  */
 @TableName("adddress")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Adddress extends Model<Adddress> {
 
     private static final long serialVersionUID=1L;
