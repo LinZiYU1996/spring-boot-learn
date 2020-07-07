@@ -39,6 +39,10 @@ import java.util.Map;
 @MapperScan(basePackages = "com.lin.aop_data.mapper")
 public class MybatisPlusConfig {
 
+    /**
+     * 数据源配置信息类 DataSourceConfig，这里配置了两个数据源，masterDb和slaveDb
+     */
+
     @Autowired
     private DataSource dataSource;
 

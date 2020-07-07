@@ -5,6 +5,11 @@ import lombok.Getter;
 
 @Getter
 public enum DynamicDataSourceEnum {
+/**
+ * 有一主一从两个数据源，我们用枚举类来代替，方便我们使用时能对应
+ *
+ */
+
 
     /**
      * 主库

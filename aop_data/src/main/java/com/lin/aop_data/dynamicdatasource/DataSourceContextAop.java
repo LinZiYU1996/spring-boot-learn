@@ -26,6 +26,14 @@ import java.lang.reflect.Method;
 @Component
 public class DataSourceContextAop {
 
+    /**
+     * aop切换数据源
+     * 到这里，aop终于可以现身出场了，这里我们定义一个aop类，对有注解的方法做切换数据源的操作
+      * @param pjp
+     * @return
+     * @throws Throwable
+     */
+
     @Around("@annotation(com.lin.aop_data.dynamicdatasource.DataSourceSelector)")
     public Object setDynamicDataSource(ProceedingJoinPoint pjp) throws Throwable {
         boolean clear = true;
